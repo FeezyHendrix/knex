@@ -1,6 +1,6 @@
 {
   "name": "knex",
-  "version": "3.2.10",
+  "version": "3.3.0",
   "description": "A batteries-included SQL query & schema builder for PostgresSQL, MySQL, CockroachDB, MSSQL and SQLite3",
   "main": "knex.js",
   "types": "types/index.d.ts",
@@ -8,9 +8,9 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "npm run build:ts && npm run format",
+    "build": "node init && npm run build:ts && npm run format",
     "clean": "node scripts/clean.js",
-    "build:ts": "tsc",
+    "build:ts": "node init && tsc",
     "format": "prettier --write --list-different .",
     "format:check": "prettier --list-different .",
     "debug:test": "mocha --inspect-brk --exit -t 0 test/all-tests-suite.js",
